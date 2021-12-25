@@ -1,6 +1,6 @@
 -- made by uiojaafdosijfafdssf (on roblox) 
 -- and arChEmiT (on v3rmillion) fixed the limbs not freezing
--- yes i used gui to lua to make this sorry for the messy code
+-- yes i used gui to lua to make this, sorry for the messy code
 
 -- Instances:
 
