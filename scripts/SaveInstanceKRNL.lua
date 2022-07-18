@@ -1,11 +1,11 @@
 makefolder("GamesLOL")
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-warn('Downloading "' .. GameName .. '".')
+print('Downloading "' .. GameName .. '".')
 saveinstance(game, "GamesLOL/" .. GameName .. " " .. game.PlaceId, {
     Decompile = true,
     DecompileTimeout = math.huge
 })
-warn('"' .. GameName .. '"  has been downloaded.')
+print('"' .. GameName .. '"  has been downloaded.')
 if chataboutsteal == true then
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I have downloaded this game (" .. GameName .. ").","All")
     wait(0.5)
