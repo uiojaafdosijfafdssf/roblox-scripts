@@ -2,8 +2,19 @@ makefolder(foldername)
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 print('Downloading "' .. GameName .. '".')
 saveinstance(game, foldername .. "/" .. GameName .. " " .. game.PlaceId, {
-    Decompile = true,
-    DecompileTimeout = math.huge
+    IgnoreDefaultProps = IgnoreDefaultPropsOption
+	Callback = CallbackOption
+	Binary = BinaryOption
+	Decompile = DecompileOption
+	ShowStatus = ShowStatusOption
+	Clipboard = ClipboardOption
+	RemovePlayerCharacters = RemovePlayerCharactersOption
+	MaxThreads = MaxThreadsOption
+	DecompileIgnore = DecompileIgnoreOption
+	IsolateStarterPlayer = IsolateStarterPlayerOption
+	SavePlayers = SavePlayersOption
+	DecompileTimeout = DecompileTimeoutOption
+	NilInstances = NilInstancesOption
 })
 print('"' .. GameName .. '"  has been downloaded.')
 if chataboutsteal == true then
