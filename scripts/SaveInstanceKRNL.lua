@@ -17,5 +17,5 @@ wait(0.5)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":D","All")
 if kickaftersave == true then
     wait(0.5)
-    game.Players.LocalPlayer:Kick('Hello. You got kicked by the "save game" script. There was not really a purpose to kick you, but I think that you should leave the game after you get kicked. You can disable this in the script.')
+    game.Players.LocalPlayer:Kick('Hello. You got kicked by the "save instance" script. There was not really a purpose to kick you, but I think that you should leave the game after you get kicked. You can disable this in the script.')
 end
