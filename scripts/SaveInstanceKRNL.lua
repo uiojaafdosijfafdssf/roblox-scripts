@@ -8,11 +8,11 @@ saveinstance(game, foldername .. "/" .. GameName .. " " .. game.PlaceId, {
 print('"' .. GameName .. '"  has been downloaded.')
 if chataboutsteal == true then
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I have downloaded this game (" .. GameName .. ").","All")
-    wait(waitoption)
+    wait(timebetweenmessages)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I hope you don't mind.","All")
-    wait(waitoption)
+    wait(timebetweenmessages)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":D","All")
-    wait(waitoption)
+    wait(timebetweenmessages)
 end
 
 if kickaftersave == true then
