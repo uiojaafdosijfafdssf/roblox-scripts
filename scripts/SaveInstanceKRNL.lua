@@ -1,10 +1,3 @@
-if kickaftersave ~= nil then else
-    local kickaftersave = true
-end
-if chatsaved ~= nil then else
-    local chatsaved = false
-end
-
 makefolder("GamesLOL")
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 warn('Downloading "' .. GameName .. '".')
@@ -13,7 +6,7 @@ saveinstance(game, "GamesLOL/" .. GameName .. " " .. game.PlaceId, {
     DecompileTimeout = math.huge
 })
 warn('"' .. GameName .. '"  has been downloaded.')
-if chatsaved == true then
+if chataboutsteal == true then
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I have downloaded this game (" .. GameName .. ").","All")
     wait(0.5)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I hope you don't mind.","All")
