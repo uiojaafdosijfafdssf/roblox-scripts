@@ -1,42 +1,17 @@
 makefolder(foldername)
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
-local filepath = foldername .. "/"
-if customfilename == true then
-    local filepath = filepath .. filename
-    if gamenameinfilename == true then
-        local filepath = filepath .. " " .. GameName --GamesLOL/Line Runner
-        if gameidinfilename == true then
-            local filepath = filepath .. " " .. game.PlaceId --GamesLOL/Line Runner 301530843
-        end
-    else
-        if gameidinfilename == true then
-            local filepath = filepath .. " " .. game.PlaceId --GamesLOL/301530843
-        end
-    end
-else
-    if gamenameinfilename == true then
-        local filepath = filepath .. GameName --GamesLOL/Line Runner
-        if gameidinfilename == true then
-            local filepath = filepath .. " " .. game.PlaceId --GamesLOL/Line Runner 301530843
-        end
-    else
-        if gameidinfilename == true then
-            local filepath = filepath .. game.PlaceId --GamesLOL/301530843
-        end
-    end
-end
 print('Downloading "' .. GameName .. '".')
-saveinstance(game, filepath, {
+saveinstance(game, foldername .. "/" .. GameName .. " " .. game.PlaceId, {
     Decompile = true,
     DecompileTimeout = math.huge
 })
 print('"' .. GameName .. '"  has been downloaded.')
 if chataboutsteal == true then
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I have downloaded this game (" .. GameName .. ").", "All")
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I have downloaded this game (" .. GameName .. ").","All")
     wait(0.5)
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I hope you don't mind.", "All")
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("I hope you don't mind.","All")
     wait(0.5)
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":D", "All")
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(":D","All")
 end
 
 if kickaftersave == true then
