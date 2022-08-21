@@ -14,19 +14,19 @@ end
 
 --Modify these parameters as you want--
 if ChatbotEnabled == nil then
-    local ChatbotEnabled = true --Enables and disables the Chatbot. "true" for enabled, and "false" for disabled (both without quotes).
+    getgenv().ChatbotEnabled = true --Enables and disables the Chatbot. "true" for enabled, and "false" for disabled (both without quotes).
 end
 if ChatbotLanguage == nil then
-    local ChatbotLanguage = "en" --Here is the language you want Simsimi to respond to, es for "Español", en for "English".
+    getgenv().ChatbotLanguage = "en" --Here is the language you want Simsimi to respond to, es for "Español", en for "English".
 end
 if ChatbotFilter == nil then
-    local ChatbotFilter = "true" --If you want most swears to get filtered, set this to "true" (with quotes).
+    getgenv().ChatbotFilter = "true" --If you want most swears to get filtered, set this to "true" (with quotes).
 end
 if ChatbotListenRadius == nil then
-    local ChatbotListenRadius = 10 --This how far a player can be (in studs) for the bot to respond to them. Set it to math.huge if you want it to respond at any distance.
+    getgenv().ChatbotListenRadius = 10 --This how far a player can be (in studs) for the bot to respond to them. Set it to math.huge if you want it to respond at any distance.
 end
 if ChatbotPlayers == nil then
-    local ChatbotPlayers = "all" --What players the Chatbot should respond to. Set to "all" if you want it to respond to all players (except you).
+    getgenv().ChatbotPlayers = "all" --What players the Chatbot should respond to. Set to "all" if you want it to respond to all players (except you).
 end
 
 --From here down I don't recommend moving him if you don't know Lua
