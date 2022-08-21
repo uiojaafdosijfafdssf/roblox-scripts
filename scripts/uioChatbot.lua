@@ -68,7 +68,7 @@ function everything()
     -- main
     onMessageDoneFiltering.OnClientEvent:Connect(function(messageData)
         if ChatbotEnabled == true then
-            if table.find(ChatbotPlayers, players[messageData.FromSpeaker].Name) ~= nil or ChatbotPlayers[1] == "all" then
+            if table.find(ChatbotPlayers, players[messageData.FromSpeaker].Name) ~= nil or ChatbotAll == true then
                 local speaker, message = players[messageData.FromSpeaker], messageData.Message
                 local plr = speaker
 
