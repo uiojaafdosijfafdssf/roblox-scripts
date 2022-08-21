@@ -41,8 +41,8 @@ local function messagepro(message, player) --In this function the magic happens
     local text = message
     local Response = game:HttpGet("https://api.simsimi.net/v2/?text=" ..
         text .. "&lc=" .. ChatbotLanguage .. "&cf=" .. ChatbotFilter .. "&api=" .. player.UserId) --The Simsimi api is called
-    local data = HttpService:JSONDecode(Response)
-    local workingresponse = data.success
+    local datachatbot = HttpService:JSONDecode(Response)
+    local workingresponse = datachatbot.success
     local first200characters = string.gsub(workingresponse, "zex", "___")
     local first200characters = string.gsub(first200characters, "love", "____")
     local first200characters = string.gsub(first200characters, "baby", "____")
