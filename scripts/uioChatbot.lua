@@ -26,7 +26,7 @@ if ChatbotListenRadius == nil then
     getgenv().ChatbotListenRadius = 10 --This how far a player can be (in studs) for the bot to respond to them. Set it to math.huge if you want it to respond at any distance.
 end
 if ChatbotPlayers == nil then
-    getgenv().ChatbotPlayers = "all" --What players the Chatbot should respond to. Set to "all" if you want it to respond to all players (except you).
+    getgenv().ChatbotPlayers = {"uiojaafdosijfafdssf"} --What players the Chatbot should respond to.
 end
 
 --From here down I don't recommend moving him if you don't know Lua
