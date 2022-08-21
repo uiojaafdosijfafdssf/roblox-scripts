@@ -23,4 +23,4 @@ getgenv().NilInstancesOption = false
 --or here: https://docs.script-ware.com/instance-saving-functions#yHyxm (scriptware api documentation thing about saveinstance)
 
 --LOADSTRING--
-loadstring(game:HttpGet("https://raw.githubusercontent.com/uiojaafdosijfafdssf/roblox/main/scripts/SaveInstanceKRNL.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/uiojaafdosijfafdssf/roblox-scripts/main/scripts/SaveInstanceKRNL.lua"))()
