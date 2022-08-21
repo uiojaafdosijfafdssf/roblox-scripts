@@ -38,11 +38,9 @@ function getRoot(char)
 end
 
 local function messagepro(message, player) --In this function the magic happens
-    local text = message
-    local Response = game:HttpGet("https://api.simsimi.net/v2/?text=" ..
-        text .. "&lc=" .. ChatbotLanguage .. "&cf=" .. ChatbotFilter .. "&api=" .. player.UserId) --The Simsimi api is called
+    local Response = game:HttpGet("https://api.simsimi.net/v2/?text=" .. message .. "&lc=" .. ChatbotLanguage .. "&cf=" .. ChatbotFilter .. "&api=" .. player.UserId) --The Simsimi api is called
     local datachatbot = HttpService:JSONDecode(Response)
-    local workingresponse = datachatbot.success
+    local workingresponse = datachatbot."success"
     local first200characters = string.sub(workingresponse, 1, 179)
     local first200characters = string.gsub(workingresponse, "zex", "___")
     local first200characters = string.gsub(first200characters, "love", "____")
