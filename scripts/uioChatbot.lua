@@ -42,8 +42,7 @@ local function messagepro(message, player) --In this function the magic happens
     --local first200characters = string.gsub(first200characters, "baby", "____")
     print("Chatbot got a response: " .. first200characters)
     --game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(player.DisplayName.." "..first200characters, "All") --A message is sent with the response of Simsimi
-    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(first200characters,
-        "All") --A message is sent with the response of Simsimi
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Chatbot: " .. first200characters, "All") --A message is sent with the response of Simsimi
 end
 
 if not game:IsLoaded() then
