@@ -1,3 +1,4 @@
+--THIS DOES NOT WORK, PLEASE DONT USE THIS. USE THE ACTUAL SCRIPT INSTEAD.
 --OPTIONS--
 getgenv().ChatbotEnabled = true --Enables and disables the Chatbot. "true" for enabled, and "false" for disabled (both without quotes).
 getgenv().ChatbotLanguage = "en" --Here is the language you want Simsimi to respond to, es for "Español", en for "English".
