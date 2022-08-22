@@ -35,7 +35,7 @@ end
 local function messagepro(message, player) --In this function the magic happens
     local Response = game:HttpGet("https://api.simsimi.net/v2/?text=" .. message .. "&lc=" .. ChatbotLanguage .. "&cf=" .. ChatbotFilter .. "&api=" .. player.UserId) --The Simsimi api is called
     local datachatbot = HttpService:JSONDecode(Response)
-    local first200characters = datachatbot."success"
+    local first200characters = datachatbot.messages[1].text
     --local first200characters = string.sub(workingresponse, 1, 179)
     --local first200characters = string.gsub(workingresponse, "zex", "___")
     --local first200characters = string.gsub(first200characters, "love", "____")
@@ -77,7 +77,7 @@ function everything()
                 if ChatbotListenRadius == math.huge then
                     for _, plrs in pairs(game.Players:GetPlayers()) do
                         if plr.Name == plrs.Name then
-                            if table.find(ChatbotPlayers, Players.LocalPlayer.Name) ~= nil or ChatbotAll == true then
+                            if table.find(ChatbotPlayers, Players.LocalPlayer.Name) ~= nil then
                                 messagepro(message, plr) --The function is called
                             else
                                 if plr.Name ~= Players.LocalPlayer.name then
@@ -92,7 +92,7 @@ function everything()
                             <=
                             ChatbotListenRadius then --If the player is nearby, Simsimi will read their message.
                             if plr.Name == plrs.Name then
-                                if table.find(ChatbotPlayers, Players.LocalPlayer.Name) ~= nil or ChatbotAll == true then
+                                if table.find(ChatbotPlayers, Players.LocalPlayer.Name) ~= nil then
                                     messagepro(message, plr) --The function is called
                                 else
                                     if plr.Name ~= Players.LocalPlayer.name then
