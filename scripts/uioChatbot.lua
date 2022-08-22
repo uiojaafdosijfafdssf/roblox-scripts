@@ -1,9 +1,21 @@
+--Options--
+
+getgenv().ChatbotEnabled = true --Enables and disables the Chatbot. "true" for enabled, and "false" for disabled (both without quotes).
+getgenv().ChatbotLanguage = "en" --Here is the language you want Simsimi to respond to, es for "Español", en for "English".
+getgenv().ChatbotFilter = "true" --If you want most swears to get filtered, set this to "true" (with quotes).
+getgenv().ChatbotListenRadius = 10 --This how far a player can be (in studs) for the bot to respond to them. Set it to math.huge if you want it to respond at any distance.
+getgenv().ChatbotAll = true --If you want the Chatbot to respond to everyone, set this to true. If it's true, then it will ignore what you set for "ChatbotPlayers".
+getgenv().ChatbotPlayers = {"InsertUsernameHere", "InsertUsernameHere", "InsertUsernameHere"} --What players the Chatbot should respond to. (ex. getgenv().ChatbotPlayers = {"uiojaafdosijfafdssf", "TheseAreJustRandom", "UsernamesThatIm", "MakingUp", "OtherThanUio"})
+
+--Script--
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 
 if ChatbotEnabled == false then
     print("Chatbot didn't load because it's disabled.")
+    script:Destroy()
 else
     print("Chatbot (+ Chatspy lol) script by uiojaafdosijfafdssf. There are parts of other scripts in here too, I just don't know who made them all.")
 end
@@ -11,23 +23,6 @@ end
 --The original creator of the response part in this script based this script off of ChatBot (https://v3rmillion.net/showthread.php?pid=7828912#pid7828912 i think they are talking about this), but with the Simsimi api, therefore it's smarter and has funner answers.
 --Also here is the Chatbot script I edited to make this: https://scriptblox.com/script/Universal-Script-Chatbot-1530 (scroll down to see the script.)
 --And lastly, here is the Chatspy script I used to make this: https://v3rmillion.net/showthread.php?pid=8337920#pid8337920 (I needed it because I didn't know how to use Player.Chatted to detect if OTHER people chat, and not just me, using a LocalScript because I'm pretty sure Roblox patched that.)
-
---Modify these parameters as you want--
-if ChatbotEnabled == nil then
-    getgenv().ChatbotEnabled = true --Enables and disables the Chatbot. "true" for enabled, and "false" for disabled (both without quotes).
-end
-if ChatbotLanguage == nil then
-    getgenv().ChatbotLanguage = "en" --Here is the language you want Simsimi to respond to, es for "Español", en for "English".
-end
-if ChatbotFilter == nil then
-    getgenv().ChatbotFilter = "true" --If you want most swears to get filtered, set this to "true" (with quotes).
-end
-if ChatbotListenRadius == nil then
-    getgenv().ChatbotListenRadius = 10 --This how far a player can be (in studs) for the bot to respond to them. Set it to math.huge if you want it to respond at any distance.
-end
-if ChatbotPlayers == nil then
-    getgenv().ChatbotPlayers = {"uiojaafdosijfafdssf"} --What players the Chatbot should respond to.
-end
 
 --From here down I don't recommend moving him if you don't know Lua
 
@@ -109,6 +104,8 @@ function everything()
                     end
                 end
             end
+        else
+            script:Destroy()
         end
     end);
 end
