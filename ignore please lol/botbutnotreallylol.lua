@@ -1,4 +1,4 @@
-local function messagepro(message, player) --In this function the magic happens
+function messagepro(message, player) --In this function the magic happens
     local responseprefixiguess = player.DisplayName .. ", "
     local notags = string.gsub(message, "#", "")
     local Response = game:HttpGet("https://api.simsimi.net/v2/?text=" .. notags .. "&lc=en&cf=false&api=" .. player.UserId) --The Simsimi api is called
